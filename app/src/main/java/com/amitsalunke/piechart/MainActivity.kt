@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         pieChart = findViewById<PieChart>(R.id.pieChart)//findViewById(R.id.pieChart)
         initPieChart()
-
         setDataToPieChart()
     }
 
@@ -34,16 +33,16 @@ class MainActivity : AppCompatActivity() {
         pieChart.setDrawEntryLabels(false)
         //adding padding
         pieChart.setExtraOffsets(20f, 0f, 20f, 20f)
-        pieChart.setUsePercentValues(true)
+        //pieChart.setUsePercentValues(true)
         pieChart.isRotationEnabled = false
-        pieChart.setDrawEntryLabels(false)
+        //pieChart.setDrawEntryLabels(false)
         pieChart.legend.orientation = Legend.LegendOrientation.VERTICAL
         pieChart.legend.isWordWrapEnabled = true
 
     }
 
     private fun setDataToPieChart() {
-        pieChart.setUsePercentValues(true)
+        //pieChart.setUsePercentValues(true)
         val dataEntries = ArrayList<PieEntry>()
         dataEntries.add(PieEntry(72f, "Android"))
         dataEntries.add(PieEntry(26f, "Ios"))
@@ -58,7 +57,8 @@ class MainActivity : AppCompatActivity() {
         val data = PieData(dataSet)
 
         // In Percentage
-        data.setValueFormatter(PercentFormatter())
+        data.setDrawValues(true)
+        data.setValueFormatter(PercentFormatter(pieChart))
         dataSet.sliceSpace = 3f
         dataSet.colors = colors
         pieChart.data = data
@@ -67,10 +67,10 @@ class MainActivity : AppCompatActivity() {
         pieChart.animateY(1400, Easing.EaseInOutQuad)
 
         //create hole in center
-        pieChart.holeRadius = 58f
-        pieChart.transparentCircleRadius = 61f
-        pieChart.isDrawHoleEnabled = true
-        pieChart.setHoleColor(Color.WHITE)
+        pieChart.holeRadius = 1f
+        //pieChart.transparentCircleRadius = 61f
+        pieChart.isDrawHoleEnabled = false
+        //pieChart.setHoleColor(Color.WHITE)
 
 
         //add text in center
