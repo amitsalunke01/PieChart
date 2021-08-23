@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.components.LegendEntry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
-import com.github.mikephil.charting.utils.MPPointF
 
 
 class MainActivity : AppCompatActivity() {
@@ -78,8 +78,8 @@ class MainActivity : AppCompatActivity() {
         //dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         //dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         //dataSet.setValueLinePart1OffsetPercentage(100f); /** When valuePosition is OutsideSlice, indicates offset as percentage out of the slice size */
-       // dataSet.setValueLinePart1Length(0.6f); /** When valuePosition is OutsideSlice, indicates length of first half of the line */
-       // dataSet.setValueLinePart2Length(0.6f); /** When valuePosition is OutsideSlice, indicates length of second half of the line */
+        // dataSet.setValueLinePart1Length(0.6f); /** When valuePosition is OutsideSlice, indicates length of first half of the line */
+        // dataSet.setValueLinePart2Length(0.6f); /** When valuePosition is OutsideSlice, indicates length of second half of the line */
         //setExtraOffsets(0.f, 5.f, 0.f, 5.f); // Ofsets of the view chart to prevent outside values being cropped /** Sets extra offsets (around the chart view) to be appended to the auto-calculated offsets.*/
         //
 
@@ -102,7 +102,10 @@ class MainActivity : AppCompatActivity() {
         //pieChart.centerText = "Mobile OS Market share"
         pieChart.invalidate()
 
+        val l1 = LegendEntry("Male  ()", Legend.LegendForm.CIRCLE, 10f, 2f, null, Color.YELLOW)
+        val l2 = LegendEntry("Female  ()", Legend.LegendForm.CIRCLE, 10f, 2f, null, Color.RED)
 
+        pieChart.legend.setCustom(arrayOf(l1, l2))
         //l.setForm(LegendForm.SQUARE);
         //l.setFormSize(9f);
 
