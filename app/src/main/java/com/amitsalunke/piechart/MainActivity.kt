@@ -33,11 +33,14 @@ class MainActivity : AppCompatActivity() {
         pieChart.setTouchEnabled(false)
         pieChart.setDrawEntryLabels(false)
         //adding padding
-        pieChart.setExtraOffsets(20f, 0f, 20f, 20f)
+        pieChart.setExtraOffsets(20f, 0f, 20f, 0f)
         //pieChart.setUsePercentValues(true)
         pieChart.isRotationEnabled = false
         //pieChart.setDrawEntryLabels(false)
-        pieChart.legend.orientation = Legend.LegendOrientation.VERTICAL
+        pieChart.legend.orientation = Legend.LegendOrientation.HORIZONTAL
+        //pieChart.legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+        //pieChart.legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        //pieChart.legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         //pieChart.legend.setForm(Legend.LegendForm.CIRCLE)
         pieChart.legend.form = Legend.LegendForm.CIRCLE
         pieChart.legend.formSize = 9f
@@ -102,10 +105,52 @@ class MainActivity : AppCompatActivity() {
         //pieChart.centerText = "Mobile OS Market share"
         pieChart.invalidate()
 
-        val l1 = LegendEntry("Male  ()", Legend.LegendForm.CIRCLE, 10f, 2f, null, Color.YELLOW)
-        val l2 = LegendEntry("Female  ()", Legend.LegendForm.CIRCLE, 10f, 2f, null, Color.RED)
-
-        pieChart.legend.setCustom(arrayOf(l1, l2))
+        val l1 = LegendEntry(
+            "Cheque Management (40)",
+            Legend.LegendForm.CIRCLE,
+            10f,
+            2f,
+            null,
+            Color.parseColor("#0075B0")
+        )
+        val l2 = LegendEntry(
+            "Accounts (20)",
+            Legend.LegendForm.CIRCLE,
+            10f,
+            2f,
+            null,
+            Color.parseColor("#6F2A7F")
+        )
+        val l3 = LegendEntry(
+            "Future Dated Transfer Request (7)",
+            Legend.LegendForm.CIRCLE,
+            10f,
+            2f,
+            null,
+            Color.parseColor("#E17F25")
+        )
+        val l4 =
+            LegendEntry(
+                "Transfer Request (4)",
+                Legend.LegendForm.CIRCLE,
+                10f,
+                2f,
+                null,
+                Color.parseColor("#58A618")
+            )
+        val l5 =
+            LegendEntry("Payment Request (0)", Legend.LegendForm.CIRCLE, 10f, 2f, null, Color.RED)
+        val l6 =
+            LegendEntry("Service Request (0)", Legend.LegendForm.CIRCLE, 10f, 2f, null, Color.RED)
+        val l7 = LegendEntry(
+            "Liquidity Management (0)",
+            Legend.LegendForm.CIRCLE,
+            10f,
+            2f,
+            null,
+            Color.RED
+        )
+        pieChart.legend.setCustom(arrayOf(l1, l2, l3, l4, l5, l6, l7))
         //l.setForm(LegendForm.SQUARE);
         //l.setFormSize(9f);
 
