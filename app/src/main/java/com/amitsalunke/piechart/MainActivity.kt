@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         pieChart.setTouchEnabled(false)
         pieChart.setDrawEntryLabels(false)
         //adding padding
-        pieChart.setExtraOffsets(20f, 0f, 20f, 0f)
+        //below parameter for having percentage value out side
+        //pieChart.setExtraOffsets(35.0f, 5.0f, 35.0f, 5.0f)
+        pieChart.setExtraOffsets(10.0f, 0.0f, 10.0f, 0.0f)
         //pieChart.setUsePercentValues(true)
         pieChart.isRotationEnabled = false
         //pieChart.setDrawEntryLabels(false)
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         //pieChart.legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         //pieChart.legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         //pieChart.legend.setForm(Legend.LegendForm.CIRCLE)
+        //pieChart.legend.
         pieChart.legend.form = Legend.LegendForm.CIRCLE
         pieChart.legend.formSize = 9f
         pieChart.legend.isWordWrapEnabled = true
@@ -80,9 +83,12 @@ class MainActivity : AppCompatActivity() {
         // to show value outside the chart
         //dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         //dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
-        //dataSet.setValueLinePart1OffsetPercentage(100f); /** When valuePosition is OutsideSlice, indicates offset as percentage out of the slice size */
-        // dataSet.setValueLinePart1Length(0.6f); /** When valuePosition is OutsideSlice, indicates length of first half of the line */
-        // dataSet.setValueLinePart2Length(0.6f); /** When valuePosition is OutsideSlice, indicates length of second half of the line */
+        //dataSet.setValueLinePart1OffsetPercentage(100f);
+        /** When valuePosition is OutsideSlice, indicates offset as percentage out of the slice size */
+        //dataSet.setValueLinePart1Length(0.6f);
+        /** When valuePosition is OutsideSlice, indicates length of first half of the line */
+        //dataSet.setValueLinePart2Length(0.6f);
+        /** When valuePosition is OutsideSlice, indicates length of second half of the line */
         //setExtraOffsets(0.f, 5.f, 0.f, 5.f); // Ofsets of the view chart to prevent outside values being cropped /** Sets extra offsets (around the chart view) to be appended to the auto-calculated offsets.*/
         //
 
@@ -108,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         val l1 = LegendEntry(
             "Cheque Management (40)",
             Legend.LegendForm.CIRCLE,
-            10f,
+            12f,
             2f,
             null,
             Color.parseColor("#0075B0")
@@ -116,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         val l2 = LegendEntry(
             "Accounts (20)",
             Legend.LegendForm.CIRCLE,
-            10f,
+            12f,
             2f,
             null,
             Color.parseColor("#6F2A7F")
