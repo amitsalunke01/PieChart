@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         pieChart.setDrawEntryLabels(false)
         //adding padding
         //below parameter for having percentage value out side
-        //pieChart.setExtraOffsets(35.0f, 5.0f, 35.0f, 5.0f)
-        pieChart.setExtraOffsets(10.0f, 0.0f, 10.0f, 0.0f)
+        pieChart.setExtraOffsets(35.0f, 5.0f, 35.0f, 5.0f)
+        //pieChart.setExtraOffsets(10.0f, 0.0f, 10.0f, 0.0f)
         //pieChart.setUsePercentValues(true)
         pieChart.isRotationEnabled = false
         //pieChart.setDrawEntryLabels(false)
@@ -81,13 +81,13 @@ class MainActivity : AppCompatActivity() {
         //
 
         // to show value outside the chart
-        //dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
-        //dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
-        //dataSet.setValueLinePart1OffsetPercentage(100f);
+        dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet.setValueLinePart1OffsetPercentage(100f);
         /** When valuePosition is OutsideSlice, indicates offset as percentage out of the slice size */
-        //dataSet.setValueLinePart1Length(0.6f);
+        dataSet.setValueLinePart1Length(0.6f);
         /** When valuePosition is OutsideSlice, indicates length of first half of the line */
-        //dataSet.setValueLinePart2Length(0.6f);
+        dataSet.setValueLinePart2Length(0.6f);
         /** When valuePosition is OutsideSlice, indicates length of second half of the line */
         //setExtraOffsets(0.f, 5.f, 0.f, 5.f); // Ofsets of the view chart to prevent outside values being cropped /** Sets extra offsets (around the chart view) to be appended to the auto-calculated offsets.*/
         //
@@ -95,7 +95,8 @@ class MainActivity : AppCompatActivity() {
         pieChart.data = data
         data.setValueTextSize(15f)
         //data.setValueTextColor(Color.parseColor("#FFFFFF"))
-        data.setValueTextColor(Color.WHITE)
+        //data.setValueTextColor(Color.WHITE)
+        data.setValueTextColor(Color.BLACK)
         //pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
         pieChart.animateY(1400, Easing.EaseInOutQuad)
 
